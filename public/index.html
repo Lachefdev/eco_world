@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        document.addEventListener("DOMContentLoaded", evt => {
+
+            const elUser = document.querySelector('#account svg');
+            elUser.addEventListener('click', (evt) => {
+                window.location.href = 'account.html';
+            })
+
+        });
+
+    </script>
+</head>
+
+<body>
+
+    <header>
+        <button onclick="location.href='challenge.html'">CHALLENGE</button>
+        <nav>
+            <ul>
+                <li><a href="lexikon.html">LEXIKON</a></li>
+                <li><a href="news.html">NEWS</a></li>
+            </ul>
+        </nav>
+        <!--donate-->
+        <div id="account"><svg xmlns="http://www.w3.org/2000/svg" width="60.479" height="63.695"
+                viewBox="0 0 60.479 63.695">
+                <path id="user" data-name="Union 3"
+                    d="M1590.082-2310.305s-2.891-28.146,25.721-29.1,28.612,29.1,28.612,29.1Zm12.576-44.138c0-7.487,6.586-13.557,14.709-13.557s14.709,6.069,14.709,13.557-6.585,13.557-14.709,13.557S1602.658-2346.956,1602.658-2354.443Z"
+                    transform="translate(-1586.935 2371)" fill="#fff" stroke="#4f4f4f" stroke-width="6" />
+            </svg></div>
+        </div>
+    </header>
+
+    <main>
+
+        <div id="introduction">
+            <h1></h1>
+            <p></p>
+        </div>
+
+        <div>
+            <h2></h2>
+            <input type="text" id="search">
+        </div>
+
+        <div id="categorization">
+
+        </div>
+
+        <div id="map">
+
+            <!--API-->
+
+            <span id="title">NACHHALTIG</span>
+            <div id="legend">
+                <ul>
+                    <li>ent-sorgen</li>
+                    <li>be-sorgen</li>
+                </ul>
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer>
+        <nav>
+            <!--Copyright-->
+            <a href="about.html">ÜBER TREASAWARE</a>
+            <a href="privacypolicy.html">DATENSCHUTZ</a>
+            <a href="impressum.html">IMPRESSUM</a>
+        </nav>
+    </footer>
+
+</body>
+
+</html>
