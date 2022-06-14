@@ -6,14 +6,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Titel</title>
-    <style></style>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+        integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+        crossorigin="" />
+
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+
+        #trash {
+            position: relative;
+            width: 50%;
+            margin: 5% auto;
+            text-align: center;
+        }
+
+        #search {
+            visibility: hidden;
+            height: 30px;
+            width: 75%;
+            border-style: none;
+            border: solid 2px rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+            background-color: rgba(0, 0, 0, 0.2)
+        }
+
+        #map {
+            height: 600px;
+            width: 75%;
+            margin: 0 auto;
+        }
+
+        #selection {
+            z-index: 800;
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            border: solid 2px rgba(0, 0, 0, 0.2);
+            border-radius: 4px;
+            height: 30px;
+            background-color: #fff;
+        }
+    </style>
+
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+        integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+        crossorigin=""></script>
+
+    <script src="scripts.js" type="module" defer></script>
 
     <script>
         'use strict';
 
         document.addEventListener("DOMContentLoaded", evt => {
 
-            const elUser = document.querySelector('#account svg');
+            const elUser = document.querySelector('#account');
             elUser.addEventListener('click', (evt) => {
                 window.location.href = 'account.html';
             })
@@ -21,26 +69,21 @@
         });
 
     </script>
+
 </head>
 
 <body>
 
     <header>
-        <button onclick="location.href='challenge.html'">CHALLENGE</button>
-        <nav>
-            <ul>
-                <li><a href="lexikon.html">LEXIKON</a></li>
-                <li><a href="news.html">NEWS</a></li>
-            </ul>
+
+        <nav id="top">
+            <a href="challenge.html" class="button">CHALLENGE</a>
+            <a href="lexikon.html">LEXIKON</a>
+            <a href="news.html">NEWS</a>
+            <!--donate-->
+            <img src="https://img.icons8.com/windows/50/undefined/teepee.png" id="account" />
         </nav>
-        <!--donate-->
-        <div id="account"><svg xmlns="http://www.w3.org/2000/svg" width="60.479" height="63.695"
-                viewBox="0 0 60.479 63.695">
-                <path id="user" data-name="Union 3"
-                    d="M1590.082-2310.305s-2.891-28.146,25.721-29.1,28.612,29.1,28.612,29.1Zm12.576-44.138c0-7.487,6.586-13.557,14.709-13.557s14.709,6.069,14.709,13.557-6.585,13.557-14.709,13.557S1602.658-2346.956,1602.658-2354.443Z"
-                    transform="translate(-1586.935 2371)" fill="#fff" stroke="#4f4f4f" stroke-width="6" />
-            </svg></div>
-        </div>
+
     </header>
 
     <main>
@@ -50,33 +93,36 @@
             <p></p>
         </div>
 
-        <div>
+        <div id="trash">
             <h2></h2>
             <input type="text" id="search">
         </div>
 
         <div id="categorization">
-
         </div>
 
+        <!--Filter-Icon-->
         <div id="map">
-
-            <!--API-->
-
-            <span id="title">NACHHALTIG</span>
-            <div id="legend">
-                <ul>
-                    <li>ent-sorgen</li>
-                    <li>be-sorgen</li>
-                </ul>
-            </div>
-
+            <select name="" id="selection">
+                <option value=""></option>
+            </select>
         </div>
+
+        <!--API-->
+
+        <span id="title">NACHHALTIG</span>
+        <div id="legend">
+            <ul>
+                <li>ent-sorgen</li>
+                <li>be-sorgen</li>
+            </ul>
+        </div>
+
 
     </main>
 
     <footer>
-        <nav>
+        <nav id="bottom">
             <!--Copyright-->
             <a href="about.html">ÜBER TREASAWARE</a>
             <a href="privacypolicy.html">DATENSCHUTZ</a>
@@ -85,5 +131,14 @@
     </footer>
 
 </body>
+
+<script>
+    const map = L.map('map').setView([49.013, 12.101], 16);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '© OpenStreetMap'
+    }).addTo(map);
+</script>
 
 </html>
