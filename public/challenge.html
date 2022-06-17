@@ -6,23 +6,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>The challenge begins..</title>
-
+    <link rel="stylesheet" href="styles.css">
     <script src="challenge.js" type="module" defer></script>
 </head>
 
 <body>
+
+    <header>
+
+        <nav id="top">
+            <a href="challenge.html" class="button">CHALLENGE</a>
+            <a href="lexikon.html">LEXIKON</a>
+            <a href="news.html">NEWS</a>
+            <!--donate-->
+            <img src="img/icons8-tipi-50.png" id="account" />
+        </nav>
+
+    </header>
+
     <main>
-        <div id="q1" class="card" data-visibility = "hidden">
-            <h1></h1>
-            <input type="radio" id="" name="choice">
-            <label for=""></label><br>
-            <input type="radio" id="" name="choice">
-            <label for=""></label><br>
-            <input type="radio" id="" name="choice">
-            <label for=""></label><br>
+        <div class="wrapper">
+            <div id="q0" data-visibility="hidden"></div>
+            <div id="q1" data-visibility="hidden"></div>
+            <div id="q2" data-visibility="hidden"></div>
+            <div id="q3" data-visibility="hidden"></div>
+            <div id="q4" data-visibility="hidden"></div>
+            <div class="resolution"></div>
         </div>
-        <div class="answer"></div>
     </main>
+
+    
+    <footer>
+        <nav id="bottom">
+            <a href="about.html">ÜBER TREASAWARE</a>
+            <a href="privacypolicy.html">DATENSCHUTZ</a>
+            <a href="impressum.html">IMPRESSUM</a>
+            <p>&copy Miriam Ebert 2022</p>
+        </nav>
+    </footer>
+
 </body>
 
 </html>

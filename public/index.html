@@ -12,63 +12,11 @@
         crossorigin="" />
 
     <link rel="stylesheet" href="styles.css">
-
-    <style>
-
-        #trash {
-            position: relative;
-            width: 50%;
-            margin: 5% auto;
-            text-align: center;
-        }
-
-        #search {
-            visibility: hidden;
-            height: 30px;
-            width: 75%;
-            border-style: none;
-            border: solid 2px rgba(0, 0, 0, 0.2);
-            border-radius: 12px;
-            background-color: rgba(0, 0, 0, 0.2)
-        }
-
-        #map {
-            height: 600px;
-            width: 75%;
-            margin: 0 auto;
-        }
-
-        #selection {
-            z-index: 800;
-            position: absolute;
-            right: 10px;
-            top: 10px;
-            border: solid 2px rgba(0, 0, 0, 0.2);
-            border-radius: 4px;
-            height: 30px;
-            background-color: #fff;
-        }
-    </style>
+    <script src="scripts.js" type="module" defer></script>
 
     <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
         integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
         crossorigin=""></script>
-
-    <script src="scripts.js" type="module" defer></script>
-
-    <script>
-        'use strict';
-
-        document.addEventListener("DOMContentLoaded", evt => {
-
-            const elUser = document.querySelector('#account');
-            elUser.addEventListener('click', (evt) => {
-                window.location.href = 'account.html';
-            })
-
-        });
-
-    </script>
 
 </head>
 
@@ -81,41 +29,35 @@
             <a href="lexikon.html">LEXIKON</a>
             <a href="news.html">NEWS</a>
             <!--donate-->
-            <img src="https://img.icons8.com/windows/50/undefined/teepee.png" id="account" />
+            <img src="img/icons8-tipi-50.png" id="account" />
         </nav>
 
     </header>
 
     <main>
 
-        <div id="introduction">
-            <h1></h1>
-            <p></p>
-        </div>
+        <h1>Ein neuer Treasawaner!</h1>
+        <p style="text-align: center">Wie schön, dass du hergefunden hast.<br></p>
 
-        <div id="trash">
-            <h2></h2>
-            <input type="text" id="search">
-        </div>
+        <input type="text" id="search">
 
         <div id="categorization">
         </div>
 
-        <!--Filter-Icon-->
         <div id="map">
+            <!--Filter-Icon-->
             <select name="" id="selection">
                 <option value=""></option>
             </select>
         </div>
 
-        <!--API-->
 
-        <span id="title">NACHHALTIG</span>
         <div id="legend">
-            <ul>
-                <li>ent-sorgen</li>
-                <li>be-sorgen</li>
-            </ul>
+            <h4 style="float:left; margin: 0 25px 0 0">NACHHALTIG</h4>
+            <span>be-sorgen</span>
+            <img src="img/icons8-crowd-50.png" />
+            <span>ent-sorgen</span>
+            <img src="img/icons8-flour-of-rye-50.png" />
         </div>
 
 
@@ -123,22 +65,13 @@
 
     <footer>
         <nav id="bottom">
-            <!--Copyright-->
             <a href="about.html">ÜBER TREASAWARE</a>
             <a href="privacypolicy.html">DATENSCHUTZ</a>
             <a href="impressum.html">IMPRESSUM</a>
+            <p>&copy Miriam Ebert 2022</p>
         </nav>
     </footer>
 
 </body>
-
-<script>
-    const map = L.map('map').setView([49.013, 12.101], 16);
-
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19,
-        attribution: '© OpenStreetMap'
-    }).addTo(map);
-</script>
 
 </html>

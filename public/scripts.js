@@ -1,18 +1,39 @@
-/* 
-<img src="https://img.icons8.com/small/50/undefined/crowd.png"/>
-<img src="https://img.icons8.com/ios/50/undefined/flour-of-rye.png"/>
-*/
-
-
 'use strict';
 
-const marker = L.marker([49.023940, 12.100377]).addTo(map);
+const elUser = document.querySelector('#account');
+elUser.addEventListener('click', (evt) => {
+    window.location.href = 'account.html';
+})
 
-/*var circle = L.circle([51.508, -0.11], {
-    color: 'red',
-    fillColor: '#f03',
-    fillOpacity: 0.5,
-    radius: 500
-}).addTo(map);*/
 
-marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
+const map = L.map('map').setView([49.013, 12.101], 16);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '© OpenStreetMap'
+}).addTo(map);
+
+
+const CrowdIcon = L.Icon.extend({
+    options: {
+        iconSize:     [32, 32],
+        iconAnchor:   [16, 16],
+        popupAnchor:  [-8, -24]
+    }
+});
+
+const FlourIcon = L.Icon.extend({
+    options: {
+        iconSize:     [32, 32],
+        iconAnchor:   [16, 16],
+        popupAnchor:  [-8, -24]
+    }
+});
+
+L.icon = (options) => {
+    return new L.Icon(options);
+};
+
+const greenIcon = new CrowdIcon({iconUrl: 'img/icons8-crowd-50.png'});
+const marker = L.marker([49.023940, 12.100377], {icon: greenIcon}).addTo(map).bindPopup("I am a green leaf.").openPopup();
+
