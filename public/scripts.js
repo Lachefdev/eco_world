@@ -14,7 +14,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 
-const CrowdIcon = L.Icon.extend({
+const ShareIcon = L.Icon.extend({
     options: {
         iconSize:     [32, 32],
         iconAnchor:   [16, 16],
@@ -22,7 +22,7 @@ const CrowdIcon = L.Icon.extend({
     }
 });
 
-const FlourIcon = L.Icon.extend({
+const GetIcon = L.Icon.extend({
     options: {
         iconSize:     [32, 32],
         iconAnchor:   [16, 16],
@@ -34,6 +34,6 @@ L.icon = (options) => {
     return new L.Icon(options);
 };
 
-const greenIcon = new CrowdIcon({iconUrl: 'img/icons8-crowd-50.png'});
+const greenIcon = new ShareIcon({iconUrl: 'img/icons8-plastic-bottle-50.png'});
 const marker = L.marker([49.023940, 12.100377], {icon: greenIcon}).addTo(map).bindPopup("I am a green leaf.").openPopup();
 

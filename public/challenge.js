@@ -32,7 +32,7 @@ const elAnswers = [
         'ein Viertel',
         'drei Viertel'
     ],
-
+    
 ];
 
 let index = 0, min = 0, max = elCollection.length;
@@ -44,9 +44,9 @@ const elMotivations = ['Vielleicht klappts mit der nächsten Frage besser!', 'Le
 //FUNKTIONEN
 
 const showResult = () => {
-    const elCard = document.querySelector('.card');
+    const elWrapper = document.querySelector('.wrapper');
     const elResult = document.createElement('p');
-    elCard.append(elResult);
+    elWrapper.append(elResult);
     elResult.className = 'result';
 
     if (index == max) {
@@ -62,28 +62,29 @@ const showResult = () => {
 
 }
 
-//Rb fertigstellen
-const handleAnswer = (event) => {
+const handleAnswer = () => {
     
     const elExplanation = document.createElement('span');
     elResolution.append(elExplanation);
     elResolution.className = '';
     elResolution.className += 'highlight';
-
-    let elChosen = elCollection[count][1];
-    //console.log(event);
-
+    
+    let elChosen = elCollection[index][1];
+    let elRbs = [...document.querySelectorAll('input[name="choice"]')];
+    let elSelected = elRbs.filter(el => el.checked);
+    
     index++;
-    if (index === 5) {
-        showResult()
-    } else {
-        if (elChosen === 'checked') {
-            elExplanation.innerHTML = elCongrats[createNumber()];
-            count++;
-        }
-        if (elChosen !== 'checked') {
-            elExplanation.innerHTML = elMotivations[createNumber()];
-        }
+
+    if (elSelected[0].id == elChosen) {
+        elExplanation.innerHTML = elCongrats[createNumber()];
+        count++;
+    } 
+    if (elSelected[0].id != elChosen) {
+        elExplanation.innerHTML = elMotivations[createNumber()];
+    }
+
+    if (index == 5) {
+        showResult();
     }
 
     const elBtnNext = document.createElement('button');
@@ -91,7 +92,7 @@ const handleAnswer = (event) => {
     elBtnNext.innerHTML = 'Next';
     elResolution.append(elBtnNext);
     //Slider
-    //elBtnNext.addEventListener('click', takeChallenge());
+    elBtnNext.addEventListener('click', () => takeChallenge());
 }
 
 const showQuestion = id => {
@@ -100,10 +101,10 @@ const showQuestion = id => {
     elQuiz.dataset.visibility = 'visible';
 
     const elQuestion = document.createElement('h2');
-    elQuestion.innerHTML = elCollection[count][0];
+    elQuestion.innerHTML = elCollection[index][0];
     elQuiz.append(elQuestion);
 
-    for (let i = 0; i < elAnswers[count].length; i++) {
+    for (let i = 0; i < elAnswers[index].length; i++) {
 
         const elContainer = document.createElement('div');
         elContainer.className = 'container';
@@ -112,22 +113,30 @@ const showQuestion = id => {
         const elPossibilities = document.createElement('input');
         elPossibilities.setAttribute('type', 'radio');
         elPossibilities.setAttribute('name', 'choice');
+        elPossibilities.setAttribute('id', i);
         elPossibilities.addEventListener('click', () => handleAnswer());
         elContainer.append(elPossibilities);
 
         const elLabel = document.createElement('label');
-        elLabel.innerHTML = elAnswers[count][i];
+        elLabel.innerHTML = elAnswers[index][i];
         elContainer.append(elLabel);
     }
-
-    /*const elRemaining = document.getElementById(!id);
-    elRemaining.dataset.visibility = 'hidden';*/
 }
 
 const takeChallenge = () => {
 
+    const elRecent = document.querySelector('div[data-visibility = "visible"]');
+    elRecent.dataset.visibility = 'hidden';
+    elRecent.className = '';
+    elRecent.innerHTML = '';
+    elResolution.innerHTML = '';
+    elResolution.className = '';
+
     let ident;
-    if (count === 0) {
+    ident = 'q' + index;
+    showQuestion(ident);
+
+    /*if (count === 0) {
         let elRepl = count++;
         //console.log(elRepl);
         ident = 'q' + elRepl;
@@ -135,9 +144,7 @@ const takeChallenge = () => {
         let elRepl = count;
         ident = 'q' + elRepl;
     }
-    //console.log(ident);
-
-    showQuestion(ident);
+    //console.log(ident);*/
 }
 
 takeChallenge();
