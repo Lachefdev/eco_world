@@ -229,6 +229,38 @@ nav > img {
     display: block;
 }
 
+.next {
+    /*border: solid 2px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;*/
+    background-color: #ffffff;
+    color: #da6509;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 10px;
+    margin-left: 25px;
+}
+
+.next:visited {
+    color: #0d969e;
+}
+  
+.next:hover, .next:focus {
+    opacity: 0.8;
+    text-decoration: none;
+}
+  
+.next:active {
+    background-color: #eca325;
+}
+
+.result {
+    width: 50%;
+    margin: 0 auto; 
+    padding: 75px;
+    border: 3px solid #283244;
+    background-color: #D7F7F6;
+}
+
 
   
 
