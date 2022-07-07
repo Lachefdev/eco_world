@@ -149,6 +149,10 @@ nav > img {
     width: 40px;
 }
 
+#intro {
+    margin-bottom: 125px;
+}
+
 #search {
     display: block;
     width: 40%;
@@ -166,28 +170,52 @@ nav > img {
 }
 
 #selection {
-    z-index: 800;
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    border: solid 2px rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
-    height: 30px;
-    background-color: #fff;
+    position: relative;
+    left: 65%;
+    bottom: 3px;
+}
+
+#be {
+    font-weight: bold;
+    color: white;
+    padding: 5px 10px;
+    border: solid 2px rgba(0, 0, 0);
+    border-radius: 4px 4px 0 0;
+    background-color: #739F3D;
+    margin: -2.5px;
+    cursor: pointer;
+}
+
+#ent {
+    font-weight: bold;
+    padding: 5px 10px;
+    border: solid 2px rgba(0, 0, 0);
+    border-radius: 4px 4px 0 0;
+    background-color: #D7F7F6;
+    margin: -2.5px;
+    cursor: pointer;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
 }
 
 #legend {
+    position: relative;
     display: flex;
-    /*Position*/
-    justify-content: center;
+    left: 15%;
     align-items: center;
-    margin-bottom: 75px;    
+    margin-bottom: 125px;    
 }
 
 #legend > img {
     width: 25px;
-    margin-left: 5px;
-    margin-right: 15px
+    margin-right: 5px;
+    margin-left: 25px
 }
 
 .wrapper {

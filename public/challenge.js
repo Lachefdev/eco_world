@@ -57,13 +57,13 @@ const showResult = () => {
 
     if (count == max) {
         elResult.innerHTML = 'Spitzenmäßig! Du scheinst bereits ein Insider zu sein. Und darfst dich am Ausbau der App beteiligen. Wenn du also weitere Spots kennst, die für andere interessant sein könnten.. trag sie im Editor ein. Und hilf, den Planeten ein bisschen sauberer zu machen.';
-
+        
     }
     else if (count > 1 && count < 5) {
-        elResult.innerHTML = 'Nicht schlecht, Herr Specht. Trotzdem könntest du an der ein oder anderen Stellschraube wahrscheinlich noch drehen. Möchtest du genauer wissen WO empfehle ich dir den ' + '<a href="https://uba.co2-rechner.de/de_DE/" target="_blank">Rechner</a> des Umweltbundesamtes. Für das WIE ist der WWF eine gute Anlaufstelle.'
+        elResult.innerHTML = 'Nicht schlecht, Herr Specht. Trotzdem könntest du an der ein oder anderen Stellschraube wahrscheinlich noch drehen. Möchtest du genauer wissen, WO, empfehle ich dir den ' + '<a href="https://uba.co2-rechner.de/de_DE/" target="_blank">Rechner</a> des Umweltbundesamtes. Für das WIE ist der WWF eine gute Anlaufstelle.'
     }
     else if (count <= 1) {
-        elResult.innerHTML = 'Da ist noch Luft nach oben, oder? Schau gerne mal in unser Lexikon. Dort haben wir all die Tipps & Tricks gesammelt, die wir im Laufe der Jahre erprobt und für alltagstauglich empfunden haben. Es ist eigentlich gar nicht soo schwer, macht Spaß und hinterlässt ein richtig gutes Gewissen.'
+        elResult.innerHTML = 'Da ist noch Luft nach oben, oder? Schau gerne mal in unser Lexikon. Dort haben wir all die Tipps & Tricks gesammelt, die uns im Laufe der Jahre und mit Spaß an der Sache zu umweltbewussteren Bürgern gemacht haben. Ein gutes Gewissen inklusive.'
     }
 
 }

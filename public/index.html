@@ -30,37 +30,58 @@
             <a href="lexikon.html">LEXIKON</a>
             <a href="news.html">NEWS</a>
             <!--donate-->
-            <img src="img/icons8-tipi-50.png" id="account"/>
+            <img src="img/icons8-tipi-50.png" id="account" />
         </nav>
 
     </header>
 
     <main>
 
-        <h1>Ein neuer Treasawaner!</h1>
-        <p style="text-align: center">Wie schön, dass du hergefunden hast.<br></p>
+        <div id="intro">
+            <h1>Ein neuer Treasawaner!</h1>
+            <p style="text-align: center">Wie schön, dass du hergefunden hast.<br></p>
+        </div>
 
+        <!-- 
         <input type="text" id="search">
 
         <div id="categorization">
         </div>
+        -->
 
-        <div id="map">
-            <!--Filter-Icon-->
-            <select name="" id="selection">
-                <option value=""></option>
-            </select>
+
+        <div id="selection">
+            <span id="be">BE-SORGEN</span>
+            <span id="ent">ENT-SORGEN</span>
         </div>
 
+        <div id="besorgen">
+            <div id="map"></div>
+            <div id="legend">
 
-        <div id="legend">
-            <h4 style="float:left; margin: 0 25px 0 0">NACHHALTIG</h4>
-            <span>be-sorgen</span>
-            <img src="img/icons8-plastic-bottle-50.png" />
-            <span>ent-sorgen</span>
-            <img src="img/icons8-vegetables-box-50.png" style="width: 20px"/>
+                <img src="img/icons8-ingredients-50.png" />
+                <span>Bioläden</span>
+                <img src="img/icons8-sofa-50.png" />
+                <span>Second Hand</span>
+                <img src="img/icons8-books-50.png" />
+                <span>Bücherschrank</span>
+
+            </div>
         </div>
 
+        <div id="entsorgen" class="hide">
+            <div id="map"></div>
+            <div id="legend">
+
+                <img src="img/icons8-t-shirt-50.png" />
+                <span>Kleiderspenden</span>
+                <img src="img/icons8-car-battery-50.png" />
+                <span>Elektroschrott</span>
+                <img src="img/icons8-waste-sorting-50.png" />
+                <span>Biomüll & Glascontainer</span>
+
+            </div>
+        </div>
 
     </main>
 
